@@ -1,0 +1,48 @@
+
+#board .row {
+  height: 30px;
+  user-select: none;
+}
+
+#board .column{
+  max-width: 30px;
+  max-height: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.popover{
+  display: none !important;
+}
+.popover.show {
+  display: block !important;
+}
+
+.btn.disabled, .btn:disabled {
+  opacity: 1;
+  background-color: #74c687;
+  border-color: #76c789;
+}
+.btn:hover[disabled] .popover{
+  display: block !important;
+}
+.column span {
+  display: none;
+  z-index: 2;
+}
+.column:hover span {
+  display: block;
+}
+.show-debug .visited{
+  background-color: rgba(24, 24, 150, 0.676);
+}
+.visited.caminho{
+  background-color: #74c687;
+}
+.alerta{
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

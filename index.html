@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="libraries/Bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="libraries/FontAwesome/css/all.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <script src="libraries/jQuery/jquery-3.6.3.min.js"> </script>
+  <title>Grafos</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="py-4">
+      <h1>Estudo de Grafos</h1>
+    </div>
+    <div class="d-flex flex-row btn-group btn-group-toggle justify-content-center" data-toggle="buttons" id="obstacles">
+      <label class="btn btn-secondary graph-btn-obstacles active" onclick="setObstacleActive(event)">
+        <input type="radio" name="options" id="eraser" autocomplete="off" checked> 
+        <i class="fa-solid fa-2x fa-eraser"></i>
+      </label>
+      <label class="btn btn-secondary graph-btn-obstacles" onclick="setObstacleActive(event)">
+        <input type="radio" name="options" id="person" autocomplete="off"> 
+        <i class="fa-solid fa-2x fa-person"></i>
+      </label>
+      <label class="btn btn-secondary graph-btn-obstacles" onclick="setObstacleActive(event)">
+        <input type="radio" name="options" id="target" autocomplete="off"> 
+        <i class="fa-solid fa-2x fa-location-dot"></i>
+      </label>
+    </div>
+    <div id='board' class='position-relative'>
+     
+
+    </div>
+    <div id="control" class='mt-2 d-flex  flex-row'>   
+      <div class='d-flex'>
+        <button id='start' type="button" class="btn btn-success p-3 rounded-circle position-relative">
+          <i class="fa-solid fa-4x fa-map-location-dot"></i>
+          <div class="popover fade bs-popover-right" style="position: absolute; top: 0px; width: 400px; left: 110px;">
+            <div class="arrow" style="top: 34px;"></div>
+            <h3 class="popover-header text-secondary">Buscar caminho</h3>
+            <div class="popover-body">Necessário incluir um ponto inicial e outro final</div>
+          </div>
+        </button>  
+        <button id='limpar_tudo' type="button" class="btn btn-danger ml-3 p-1 rounded-circle position-relative" style="width:60px; height:60px;">
+          <i class="fa-solid fa-2x fa-refresh"></i>
+        </button>  
+        <div class="ml-2 p-2">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="debugCheck">
+            <label class="form-check-label" for="flexCheckDefault">
+              Mostrar debug
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="randomMap">
+            <label class="form-check-label" for="flexCheckDefault">
+              Gerar mapa aleatório
+            </label>
+          </div>
+        </div>
+        <div class="ml-2 p-2">
+          <div class="flex-row">
+            <input type="radio" name="heuristic" id="manhattan" value="manhattan" checked> Manhattan
+          </div>
+          <div class="flex-row">
+            <input type="radio" name="heuristic" id="diagonal" value="diagonal"> Diagonal
+          </div>
+          <div class="flex-row">
+            <input type="radio" name="heuristic" id="euclidean" value="euclidean"> Euclidean
+          </div>
+        </div>
+        <div class="ml-2 p-2">
+          <div class="flex-row">
+            <input type="radio" name="valor" id="considerar_f" value="f" checked> Considerar F
+          </div>
+          <div class="flex-row">
+            <input type="radio" name="valor" id="considerar_g" value="g"> Considerar G
+          </div>
+          <div class="flex-row">
+            <input type="radio" name="valor" id="considerar_h" value="h"> Considerar H
+          </div>
+        </div>
+    </div>
+  </div>
+  
+</body>
+<script src="assets/script/index.js"> </script>
+<script src="assets/script/grafo.js"> </script>
+
+</html>
