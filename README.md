@@ -4,19 +4,34 @@ Uma versão do código [javascript-astar](https://github.com/bgrins/javascript-a
 
 ## Testando o algoritmo
 
-Acima existe a barra de construção de obstáculos. Por padrão cada quadrado vazio na matriz representa peso 2 e cada outro obstaculo possui as respectivos pesos:
+Acima existe a barra de construção de obstáculos. Utilize os botões acima para construir obstaculos e forçar o personagem a buscar a melhor rota possível. Por padrão cada quadrado vazio na matriz representa peso 2 e cada outro obstaculo possui as respectivos pesos:
 
-* 
-* 
-* 
-* 
-* 
-* 
-* 
+* <img width="20" height="20" src='assets/media/road-solid.svg'> </img>: Representa peso 1, tornando o caminho mais facil;
+* <img width="20" height="20" src='assets/media/seedling-solid.svg'> </img>: Representa peso 3;
+* <img width="20" height="20" src='assets/media/tree-solid.svg'> </img>: Representa peso 4;
+* <img width="20" height="20" src='assets/media/water-solid.svg'> </img>: Representa peso 5;
+* <img width="20" height="20" src='assets/media/house-solid.svg'> </img>: Representa peso 6;
+* <img width="20" height="20" src='assets/media/house-lock-solid.svg'> </img>: Representa peso 7;
+* <img width="20" height="20" src='assets/media/mountain-solid.svg'> </img>: Representa peso 8;
+* <img width="20" height="20" src='assets/media/volcano-solid.svg'> </img>: Representa peso 9;
+* <img width="20" height="20" src='assets/media/circle-xmark-regular.svg'> </img>: Representa caminho bloqueado sem chance de passar
 
-Ao clicar sobre o botão maior abaixo ele irá calcular um caminho entre o personagem e o alvo.
+Ao clicar sobre o botão verde <img width="20" height="20" src='assets/media/map-location-dot-solid.svg'> </img>  o código vai pegar o estado atual da matriz e traçar a rota do ponto inicial ao final. 
 
-Utilize os botões acima para construir obstaculos para o personagem representado pelo ícone da pessoa. 
+* O ícone de personagem <img width="20" height="20" src='assets/media/person-solid.svg'> </img> representa o ponto inicial;
+* O ícone de localização <img width="20" height="20" src='assets/media/location-dot-solid.svg'> </img> representa o ponto final;
+
+Só será possível incluir um ponto inicial e um ponto final.
+
+Existem três algoritmos heuristicos disponíveis para seleção, manhattan ou diagonal ou euclidean. Cada algoritmo possui uma forma diferente traçar a rota para chegar ao ponto final. Também será possível seleiconar o tipo de calculo para analisar os pesos. 
+
+* Considerar H fará com que o algoritmo ignore os pesos, traçando o caminho de acordo com o algoritmo Heuristico selecionado, tornando esse tipo de calculo o mais rápido, porém menos eficiente;
+* Considerar G irá considerar o peso, analisando um número maior de campos antes de definir o trajeto;
+* Considerar F irá considerar o peso e o Heuristico, traçando um caminho analisando um menor numero de campos que o calculo G.
+
+Marcar a opção "Mostrar Debug mostrará em azul os campos que foram analisados pelo algoritmo antes de traçar o caminho, e mostrará também em cada célula o valor que representa os tipos de calculo.
+
+É possível limpar a matrix usando o botão <img width="20" height="20" src='assets/media/arrows-rotate-solid.svg'> </img>
 
 ## Referencias
 
