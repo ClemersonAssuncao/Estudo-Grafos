@@ -72,7 +72,9 @@ $(function() {
           }
         }
       }
-    })
+    });
+    this.graphBoard.setRandomPosition('person');
+    this.graphBoard.setRandomPosition('target');
   });
   document.getElementsByName('valor').forEach(elemento => {
     elemento.addEventListener('click', (ev) => {
